@@ -65,13 +65,13 @@ export default function Faq() {
                                 Our mission is to make going solar super-easy with full transparency.
                             </p>
                             <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                                We understand how significant this investment is, that is why before enlisting any solar company on our website, we perform a thorough Pre-screening, during that we analyze their customers' reviews, product quality, and their commitment for servicing and maintenance. Once the company satisfies us by meeting our standards and parameters, our admin team provides approval and then their company's information is updated on the site along with a link through that visitors can connect to them to get answer for their queries and finally get the services.
+                                We understand how significant this investment is, that is why before enlisting any solar company on our website, we perform a thorough Pre-screening, during that we analyze their customers&apos; reviews, product quality, and their commitment for servicing and maintenance. Once the company satisfies us by meeting our standards and parameters, our admin team provides approval and then their company&apos;s information is updated on the site along with a link through which visitors can connect to them to get answers for their queries and finally get the services.
                             </p>
                             <p className="text-gray-300 text-lg leading-relaxed mb-6">
                                 No matter which company you choose here, you certainly get 25 to 30 years warranty which is nearby half of your life. Such a huge warranty itself speaks for its quality. When it comes to solar installers, you get full-service solar installers who are capable of doing everything related to solar installation.
                             </p>
                             <p className="text-gray-300 text-lg leading-relaxed">
-                                In other words, we call <strong className="text-pink-400">"Sun Solar Company"</strong> a one stop solution provider for all solar PV related needs.
+                                In other words, we call <strong className="text-pink-400">&quot;Sun Solar Company&quot;</strong> a one stop solution provider for all solar PV related needs.
                             </p>
                         </div>
                     </div>
