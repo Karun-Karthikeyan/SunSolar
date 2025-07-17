@@ -3,10 +3,10 @@ import Navbar from "./components/navbar";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 
 export const metadata = {
-  title: "SunSolar - India’s Best Solar Companies & Installers",
+  title: "SunSolar",
   description: "Find top solar companies, compare installers, and get solar insights for your home or business in India. Empowering India with clean, renewable energy.",
   openGraph: {
-    title: "SunSolar - India’s Best Solar Companies & Installers",
+    title: "SunSolar",
     description: "Find top solar companies, compare installers, and get solar insights for your home or business in India. Empowering India with clean, renewable energy.",
     url: "https://yourdomain.com/",
     images: [
@@ -16,12 +16,15 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SunSolar - India’s Best Solar Companies & Installers",
+    title: "SunSolar",
     description: "Find top solar companies, compare installers, and get solar insights for your home or business in India. Empowering India with clean, renewable energy.",
     images: ["https://yourdomain.com/assets/banner.jpg"]
   },
   alternates: {
     canonical: "https://yourdomain.com/"
+  },
+  icons: {
+    icon: "/assets/letter-s.png"
   }
 };
 

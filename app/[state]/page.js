@@ -100,29 +100,31 @@ export default function StatePage() {
   const [districts, setDistricts] = useState([]);
   const [selectedDistrict, setSelectedDistrict] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
+  const [loading, setLoading] = useState(true); // <-- loading state
 
   // Fetch companies and district JSON
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true); // Start loading
       try {
         // 1. Fetch companies
         const { data: companyData, error: companyError } = await supabase
           .from('solar_companies')
           .select('*')
           .eq('state-name', stateName);
-  
+
         if (companyError) throw companyError;
         setCompanies(companyData);
-  
+
         // 2. Fetch districts
         const { data: stateData, error: stateError } = await supabase
           .from('state_details')
           .select('districts')
           .eq('state-name', stateName)
           .single();
-  
+
         if (stateError) throw stateError;
-  
+
         // ✅ Flexible lookup of state key in JSONB
         const districtsObj = stateData.districts;
         const key = Object.keys(districtsObj).find(
@@ -132,13 +134,13 @@ export default function StatePage() {
         setDistricts(districtList);
       } catch (error) {
         console.error('Error fetching data:', error);
+      } finally {
+        setLoading(false); // End loading
       }
     };
-  
+
     fetchData();
   }, [stateName]);
-  
-  
 
   // Filter logic
   const filteredCompanies = companies.filter(company => {
@@ -147,6 +149,17 @@ export default function StatePage() {
       (!selectedCategory || company.category === selectedCategory)
     );
   });
+
+  if (loading) {
+    return (
+      <main className="bg-gray-900 min-h-screen flex items-center justify-center">
+        <div className="flex flex-col items-center">
+          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-pink-500 mb-6"></div>
+          <p className="text-gray-300 text-lg">Loading companies and districts...</p>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="relative bg-gray-900 min-h-screen ">
@@ -164,6 +177,20 @@ export default function StatePage() {
                 )}
               </p>
             </div>
+            {/* Clear Filters Button */}
+            {(selectedDistrict || selectedCategory) && (
+              <div className="flex justify-end mt-2">
+                <button
+                  className="px-4 py-2 bg-gray-700 text-white rounded-lg border border-gray-600 hover:bg-pink-600 hover:text-white transition-colors text-sm font-semibold"
+                  onClick={() => {
+                    setSelectedDistrict('');
+                    setSelectedCategory('');
+                  }}
+                >
+                  Clear Filters
+                </button>
+              </div>
+            )}
             {/* Companies List */}
             <div className="space-y-6 mt-8 w-[100%]">
               {filteredCompanies.length === 0 ? (

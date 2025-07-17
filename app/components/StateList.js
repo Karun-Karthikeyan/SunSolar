@@ -46,9 +46,6 @@ export default function StatesList() {
   const handleStateClick = (slug) => {
     setLoadingState(slug);  
     router.push(`/${slug}`);
-    // setTimeout(() => {
-    //   router.push(`/${slug}`);
-    // }, 1000);
   };
 
   return (
