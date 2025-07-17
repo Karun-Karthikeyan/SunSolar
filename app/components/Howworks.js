@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Howworks() {
     const header = "How Does it Works?";
     const para = "Your one stop solution for all solar energy needs.";
@@ -46,10 +48,11 @@ export default function Howworks() {
                         <div className="relative hidden lg:block">
                             <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-purple-500/10 rounded-3xl transform rotate-3"></div>
                             <div className="relative bg-gray-800 rounded-3xl p-8 shadow-2xl border border-gray-700">
-                                <img
+                                <Image
                                     src="/assets/how.svg"
                                     alt="How it works illustration"
-                                    className="w-full h-auto max-w-md mx-auto"
+                                    width={500}
+                                    height={300}
                                 />
                             </div>
                         </div>
